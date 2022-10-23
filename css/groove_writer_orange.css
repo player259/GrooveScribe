@@ -809,6 +809,9 @@
 	.svgTarget {
 		background: #FFF;
 	}
+	.svgTarget.chromaKey {
+		background: rgb(0, 177, 64) !important;
+	}
 
 	/* override the normal 100% width that is in groove_display for editing */
 	#RightHandContent .svgTarget svg {

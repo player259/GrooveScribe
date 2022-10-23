@@ -8,7 +8,7 @@
 	--side-highlight-bg-color: #2484C0;
 	--note-overlay-bg-color: #BDEBDD;
 
-	--highlight-color: #2484C0;
+	--highlight-color: #97d7ff;
 	--highlight-color-on-white: #2484C0;
 }
 
@@ -257,11 +257,9 @@
 
 	.abcr {  /* rectangles enclosing notes in ABC SVG */
 		fill: transparent;
-		fill-opactity: 0.25;
 	}
 	.abcr.highlighted {
 		fill: var(--highlight-color) !important;
-		fill-opacity: 0.20;
 	}
 	#GrooveDB_MetaData , #debugDisplayArea {
 		background-color: #DDD;

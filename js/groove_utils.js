@@ -2209,6 +2209,8 @@ function GrooveUtils() {
 		for (var i = 0; i < myElements.length; i++) {
 			myElements[i].setAttribute("class", myElements[i].getAttribute("class") + " highlighted");
 			root.abcNoteNumCurrentlyHighlighted = noteToHighlight;
+			var parent = myElements[i].parentNode;
+			parent.insertBefore(myElements[i], parent.firstChild);
 		}
 	};
 

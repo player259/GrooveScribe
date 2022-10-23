@@ -2566,6 +2566,7 @@ function GrooveWriter() {
 		myGrooveData.noteValue = class_note_value_per_measure;
 		myGrooveData.showStickings = isStickingsVisible();
 		myGrooveData.showToms = isTomsVisible();
+		myGrooveData.showChromaKay = isChromaKeyVisible();
 		myGrooveData.title = document.getElementById("tuneTitle").value;
 		myGrooveData.author = document.getElementById("tuneAuthor").value;
 		myGrooveData.comments = document.getElementById("tuneComments").value;
@@ -3179,6 +3180,15 @@ function GrooveWriter() {
 			updateSheetMusic();
 
 		return false; // don't follow the link
+	};
+
+	function isChromaKeyVisible() {
+		return document.getElementById('svgTarget').classList.contains('chromaKey');
+	}
+
+	root.showHideChromaKeyButton = function () {
+
+		return document.getElementById('svgTarget').classList.toggle('chromaKey');
 	};
 
 	function isStickingsVisible() {

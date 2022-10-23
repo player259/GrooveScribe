@@ -583,6 +583,9 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.svgTarget.chromaKey {
+		background: rgb(0, 177, 64) !important;
+	}
 	#sheetMusicTextFields {
 		border-top: 1px solid #999;
 		padding: 8px 0px;
