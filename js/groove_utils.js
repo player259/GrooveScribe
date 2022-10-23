@@ -161,7 +161,7 @@ function GrooveUtils() {
 		this.kick_array = class_empty_note_array.slice(0);  // copy by value
 		// toms_array contains 4 toms  T1, T2, T3, T4 index starting at zero
 		this.toms_array = [class_empty_note_array.slice(0), class_empty_note_array.slice(0), class_empty_note_array.slice(0), class_empty_note_array.slice(0)];
-		this.showToms = false;
+		this.showToms = true;
 		this.showStickings = false;
 		this.title = "";
 		this.author = "";
@@ -436,6 +436,16 @@ function GrooveUtils() {
 	};
 
 	root.GetDefaultTom1Groove = function (notes_per_measure, timeSigTop, timeSigBottom, numMeasures) {
+
+		return root.GetEmptyGroove(notes_per_measure, numMeasures);
+	};
+
+	root.GetDefaultTom2Groove = function (notes_per_measure, timeSigTop, timeSigBottom, numMeasures) {
+
+		return root.GetEmptyGroove(notes_per_measure, numMeasures);
+	};
+
+	root.GetDefaultTom3Groove = function (notes_per_measure, timeSigTop, timeSigBottom, numMeasures) {
 
 		return root.GetEmptyGroove(notes_per_measure, numMeasures);
 	};
@@ -1095,8 +1105,10 @@ function GrooveUtils() {
 		// only add if we need them.  // they are long and ugly. :)
 		if (myGrooveData.showToms) {
 			var Tom1 = "&T1=|" + root.tabLineFromAbcNoteArray('T1', myGrooveData.toms_array[0], true, true, total_notes, myGrooveData.notesPerMeasure);
+			var Tom2 = "&T2=|" + root.tabLineFromAbcNoteArray('T2', myGrooveData.toms_array[1], true, true, total_notes, myGrooveData.notesPerMeasure);
+			var Tom3 = "&T3=|" + root.tabLineFromAbcNoteArray('T3', myGrooveData.toms_array[2], true, true, total_notes, myGrooveData.notesPerMeasure);
 			var Tom4 = "&T4=|" + root.tabLineFromAbcNoteArray('T4', myGrooveData.toms_array[3], true, true, total_notes, myGrooveData.notesPerMeasure);
-			fullURL += Tom1 + Tom4;
+			fullURL += Tom1 + Tom2 + Tom3 + Tom4;
 		}
 
 		// only add if we need them.  // they are long and ugly. :)
