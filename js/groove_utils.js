@@ -39,6 +39,17 @@ var constant_ABC_STICK_R = '"R"x';
 var constant_ABC_STICK_L = '"L"x';
 var constant_ABC_STICK_BOTH = '"R/L"x';
 var constant_ABC_STICK_COUNT = '"count"x';
+var constant_ABC_STICK_KICK = '"K"x';
+var constant_ABC_STICK_FLAM = '"flam"x';
+var constant_ABC_STICK_T1 = '"T1"x';
+var constant_ABC_STICK_T2 = '"T2"x';
+var constant_ABC_STICK_T3 = '"T3"x';
+var constant_ABC_STICK_T4 = '"T4"x';
+var constant_ABC_STICK_CRC = '"CRC"x';
+var constant_ABC_STICK_RC = '"RC"x';
+var constant_ABC_STICK_FHH = '"FHH"x';
+var constant_ABC_STICK_CIRCLE = '"○"x';
+var constant_ABC_STICK_PLUS = '"+"x';
 var constant_ABC_STICK_OFF = '""x';
 var constant_ABC_HH_Ride = "^A'";
 var constant_ABC_HH_Ride_Bell = "^B'";
@@ -558,6 +569,22 @@ function GrooveUtils() {
 	function tablatureToABCNotationPerNote(drumType, tablatureChar) {
 
 		switch (tablatureChar) {
+		case "1":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_T1;
+			break;
+		case "2":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_T2;
+			break;
+		case "3":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_T3;
+			break;
+		case "4":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_T4;
+			break;
 		case "b":
 		case "B":
 			if (drumType == "Stickings")
@@ -573,17 +600,31 @@ function GrooveUtils() {
 			else if (drumType == "H")
 				return constant_ABC_HH_Crash;
 			break;
+		case "C":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_CRC;
+			break;
 		case "d":
 			if (drumType == "S")
 				return constant_ABC_SN_Drag;
 			break;
 		case "f":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_FLAM;
 			if (drumType == "S")
 				return constant_ABC_SN_Flam;
+			break;
+		case "F":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_FHH;
 			break;
 		case "g":
 			if (drumType == "S")
 				return constant_ABC_SN_Ghost;
+			break;
+		case "K":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_KICK;
 			break;
 		case "l":
 		case "L":
@@ -608,6 +649,9 @@ function GrooveUtils() {
 			break;
 		case "o":
 			switch (drumType) {
+			case "Stickings":
+				return constant_ABC_STICK_CIRCLE;
+				//break;
 			case "H":
 				return constant_ABC_HH_Open;
 				//break;
@@ -637,6 +681,9 @@ function GrooveUtils() {
 		case "r":
 		case "R":
 			switch (drumType) {
+			case "Stickings":
+				return constant_ABC_STICK_RC;
+				//break;
 			case "H":
 				return constant_ABC_HH_Ride;
 				//break;
@@ -686,6 +733,8 @@ function GrooveUtils() {
 			}
 			break;
 		case "+":
+			if (drumType == "Stickings")
+				return constant_ABC_STICK_PLUS;
 			if (drumType == "H") {
 				return constant_ABC_HH_Close;
 			}
@@ -720,6 +769,39 @@ function GrooveUtils() {
 			break;
 		case constant_ABC_STICK_COUNT:
 			tabChar = "c";
+			break;
+		case constant_ABC_STICK_KICK:
+			tabChar = "K";
+			break;
+		case constant_ABC_STICK_FLAM:
+			tabChar = "f";
+			break;
+		case constant_ABC_STICK_T1:
+			tabChar = "1";
+			break;
+		case constant_ABC_STICK_T2:
+			tabChar = "2";
+			break;
+		case constant_ABC_STICK_T3:
+			tabChar = "3";
+			break;
+		case constant_ABC_STICK_T4:
+			tabChar = "4";
+			break;
+		case constant_ABC_STICK_CRC:
+			tabChar = "C";
+			break;
+		case constant_ABC_STICK_RC:
+			tabChar = "R";
+			break;
+		case constant_ABC_STICK_FHH:
+			tabChar = "F";
+			break;
+		case constant_ABC_STICK_CIRCLE:
+			tabChar = "o";
+			break;
+		case constant_ABC_STICK_PLUS:
+			tabChar = "+";
 			break;
 		case constant_ABC_HH_Ride:
 			tabChar = "r";
