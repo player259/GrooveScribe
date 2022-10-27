@@ -583,7 +583,7 @@
 		color: transparent;
 		cursor: pointer;
 	}
-	.sticking_flam {
+	.sticking_flam, .sticking_fhh, .sticking_t1, .sticking_t2, .sticking_t3, .sticking_t4, .sticking_crc, .sticking_rc {
 		position: absolute; top: 5px; left: 0px;
 		font-size: 18px;
 		color: transparent;
@@ -860,6 +860,7 @@
 	}
 	.svgTarget.chromaKey {
 		background: rgb(0, 177, 64) !important;
+		color: white;
 	}
 
 	/* override the normal 100% width that is in groove_display for editing */

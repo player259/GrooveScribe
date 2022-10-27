@@ -438,6 +438,7 @@ function GrooveWriter() {
 		document.getElementById("snare_buzz" + id).style.color = constant_note_hidden_color_rgb;
 		document.getElementById("snare_flam" + id).style.color = constant_note_hidden_color_rgb;
 		document.getElementById("snare_drag" + id).style.color = constant_note_hidden_color_rgb;
+		document.getElementById("snare_drag" + id).style.fill = constant_note_hidden_color_rgb;
 
 		// turn stuff on conditionally
 		switch (mode) {
@@ -458,6 +459,7 @@ function GrooveWriter() {
 				break;
 			case "drag":
 				document.getElementById("snare_drag" + id).style.color = constant_note_on_color_hex;
+				document.getElementById("snare_drag" + id).style.fill = constant_note_on_color_hex;
 				if (make_sound)
 					play_single_note_for_note_setting(constant_OUR_MIDI_SNARE_DRAG);
 				break;
@@ -683,7 +685,6 @@ function GrooveWriter() {
 			case "off":
 				// show them all greyed out.
 				document.getElementById("sticking_right" + id).style.color = constant_sticking_right_off_color_rgb;
-				document.getElementById("sticking_left" + id).style.color = constant_sticking_left_off_color_rgb;
 				break;
 			case "right":
 				document.getElementById("sticking_right" + id).style.color = constant_sticking_right_on_color_rgb;
@@ -4487,21 +4488,16 @@ function GrooveWriter() {
 							<span class="notes-row-container">\
 								<div class="line-labels">\
 									<div class="hh-label" onClick="myGrooveWriter.noteLabelClick(event, \'hh\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'hh\', ' + baseindex + ')">Hi-hat</div>\
-									<div class="tom-label" id="tom1-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom1\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom1\', ' + baseindex + ')">Tom 1</div>\
-									<div class="tom-label" id="tom2-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom2\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom2\', ' + baseindex + ')">Tom 2</div>\
+									<div class="tom-label" id="tom1-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom1\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom1\', ' + baseindex + ')">T1</div>\
+									<div class="tom-label" id="tom2-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom2\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom2\', ' + baseindex + ')">T2</div>\
 									<div class="snare-label" onClick="myGrooveWriter.noteLabelClick(event, \'snare\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'snare\', ' + baseindex + ')">Snare</div>\
-									<div class="tom-label" id="tom3-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom3\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom3\', ' + baseindex + ')">Tom 3</div>\
-									<div class="tom-label" id="tom4-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom4\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom4\', ' + baseindex + ')">Tom 4</div>\
+									<div class="tom-label" id="tom3-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom3\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom3\', ' + baseindex + ')">T3</div>\
+									<div class="tom-label" id="tom4-label" onClick="myGrooveWriter.noteLabelClick(event, \'tom4\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'tom4\', ' + baseindex + ')">FT</div>\
 									<div class="kick-label" onClick="myGrooveWriter.noteLabelClick(event, \'kick\', ' + baseindex + ')" oncontextmenu="event.preventDefault(); myGrooveWriter.noteLabelClick(event, \'kick\', ' + baseindex + ')">Kick</div>\
 								</div>\
 								<div class="music-line-container">\
 									\
-									<div class="notes-container">\
-									<div class="staff-line-1"></div>\
-									<div class="staff-line-2"></div>\
-									<div class="staff-line-3"></div>\
-									<div class="staff-line-4"></div>\
-									<div class="staff-line-5"></div>\n');
+									<div class="notes-container">\n');
 
 		// backgrounds for highlighting.  Evenly spaced cols of space
 		newHTML += ('\
