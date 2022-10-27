@@ -2222,8 +2222,8 @@ function GrooveUtils() {
 				y = self.svg_highlight_y;
 				h = self.svg_highlight_h;
 				root.abc_obj.out_svg('<rect style="fill: transparent;" class="abcr" id="abcNoteNum_' + root.grooveUtilsUniqueIndex + "_" + root.abcNoteNumIndex + '" x="');
-				root.abc_obj.out_sxsy(x, '" y="', y);
-				root.abc_obj.out_svg('" width="' + w.toFixed(2) + '" height="' + h.toFixed(2) + '"/>\n');
+				root.abc_obj.out_sxsy(x, '" y="', 15);
+				root.abc_obj.out_svg('" width="' + w.toFixed(2) + '" height="' + (Math.abs(y) + 15 + h).toFixed(2) + '"/>\n');
 
 				//console.log("Type:"+type+ "\t abcNoteNumIndex:"+root.abcNoteNumIndex+ "\t X:"+x+ "\t Y:"+y+ "\t W:"+w+ "\t H:"+h);
 
