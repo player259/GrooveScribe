@@ -583,9 +583,15 @@
 		color: transparent;
 		cursor: pointer;
 	}
-	.sticking_flam, .sticking_fhh, .sticking_t1, .sticking_t2, .sticking_t3, .sticking_t4, .sticking_crc, .sticking_rc {
+	.sticking_t1, .sticking_t2, .sticking_t3, .sticking_t4, .sticking_rc, .sticking_oh, .sticking_ft {
 		position: absolute; top: 5px; left: 0px;
 		font-size: 18px;
+		color: transparent;
+		cursor: pointer;
+	}
+	.sticking_flam, .sticking_fhh, .sticking_crc, .sticking_h_k, .sticking_h_s, .sticking_oh_k, .sticking_oh_s {
+		position: absolute; top: 10px; left: -5px;
+		font-size: 14px;
 		color: transparent;
 		cursor: pointer;
 	}
@@ -917,7 +923,7 @@
 		list-style:none;
 	}
 	.noteContextMenu>ul.list li {
-		padding:10px;
+		padding:3px;
 		border-bottom: solid 1px #393939;
 		text-decoration: none;
 	}

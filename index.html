@@ -267,18 +267,16 @@
 				<li onclick='myGrooveWriter.notePopupClick("sticking","left");'><b>L</b>eft</li>
 				<li onclick='myGrooveWriter.notePopupClick("sticking","both");'><b>R/L</b></li>
 				<li onclick='myGrooveWriter.notePopupClick("sticking", "count");'>Count</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "kick");'>Kick</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "flam");'>flam</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "t1");'>T1</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "t2");'>T2</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "t3");'>T3</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "t4");'>T4</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "crc");'>CRC</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "rc");'>RC</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "fhh");'>FHH</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "circle");'>○</li>
-				<li onclick='myGrooveWriter.notePopupClick("sticking", "plus");'>+</li>
 			</ul>
+			<script type="text/javascript">
+				labels.forEach(function (label) {
+					var el = document.createElement('li');
+					var code = label.code;
+					el.onclick = function() { myGrooveWriter.notePopupClick("sticking", code); console.log(code); };
+					el.textContent = label.name;
+					document.getElementById('stickingContextMenu').appendChild(el);
+				});
+			</script>
 		</div>
 		<div class="noteContextMenu">
 			<ul id="hhContextMenu" class="list">
