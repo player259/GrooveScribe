@@ -3,7 +3,7 @@
 .fill {fill: currentColor}
 .stroke {stroke: currentColor; fill: none; stroke-width: .7}
 .f1 {font-family:serif; font-style:italic; font-size:14px}
-.f2 {font-family:calibri; font-size:16px}
+.f2 {font-family:Lato; font-size:16px}
 </style><defs>
 <path id="pclef" class="stroke" style="stroke-width:1.4" d="m-2.7 -2h5.4v-20h-5.4v20"></path>
 <path id="Xhead" d="m-3 -3l6 6m0 -6l-6 6" class="stroke" style="stroke-width:1.2"></path>

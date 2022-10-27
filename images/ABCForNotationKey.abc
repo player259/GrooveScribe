@@ -10,12 +10,12 @@ L:1/32
 %%leftmargin 0cm
 %%rightmargin 0cm
 %%topspace 10px
-%%titlefont calibri 20
-%%partsfont calibri 16
-%%gchordfont calibri 16
-%%annotationfont calibri 16
-%%infofont calibri 16
-%%textfont calibri 16
+%%titlefont Lato 20
+%%partsfont Lato 16
+%%gchordfont Lato 16
+%%annotationfont Lato 16
+%%infofont Lato 16
+%%textfont Lato 16
 %%deco (. 0 a 5 1 1 "@-8,-3("
 %%deco ). 0 a 5 1 1 "@4,-3)"
 %%beginsvg
