@@ -2255,6 +2255,16 @@ function GrooveUtils() {
 		abcToSVGCallback.abc_svg_output = ''; // clear
 		abcToSVGCallback.abc_error_output = ''; // clear
 
+		// Put all accents to the top
+		// Non-declared feature
+		root.abc_obj.psdeco = function (f, x, y, de) {
+			if (f === 'accent') {
+				root.abc_obj.xygl(x, 10, f);
+				return true;
+			}
+			return false;
+		}
+
 		root.abc_obj.tosvg("SOURCE", abc_source);
 		return {
 			svg : abcToSVGCallback.abc_svg_output,
