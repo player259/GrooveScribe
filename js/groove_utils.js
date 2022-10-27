@@ -2207,19 +2207,20 @@ function GrooveUtils() {
 
 		// annotations
 		this.anno_start = function (type, start, stop, x, y, w, h) {};
-		this.svg_highlight_y = 0;
-		this.svg_highlight_h = 44;
+		var self = this;
+		self.svg_highlight_y = 0;
+		self.svg_highlight_h = 44;
 		this.anno_stop = function (type, start, stop, x, y, w, h) {
 
 			// create a rectangle
 			if (type == "bar") {
 				// use the bar as the default y & hack
-				this.svg_highlight_y = y + 5;
-				this.svg_highlight_h = h + 10;
+				self.svg_highlight_y = y + 5;
+				self.svg_highlight_h = h + 10;
 			}
 			if (type == "note" || type == "grace") {
-				y = this.svg_highlight_y;
-				h = this.svg_highlight_h;
+				y = self.svg_highlight_y;
+				h = self.svg_highlight_h;
 				root.abc_obj.out_svg('<rect style="fill: transparent;" class="abcr" id="abcNoteNum_' + root.grooveUtilsUniqueIndex + "_" + root.abcNoteNumIndex + '" x="');
 				root.abc_obj.out_sxsy(x, '" y="', y);
 				root.abc_obj.out_svg('" width="' + w.toFixed(2) + '" height="' + h.toFixed(2) + '"/>\n');
