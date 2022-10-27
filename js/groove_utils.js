@@ -79,8 +79,6 @@ var labels = [
 	{ code: 'plus', abc: '"+"x', url: '+', name: '+' },
 	{ code: 't1', abc: '"T1"x', url: '1', name: 'T1' },
 	{ code: 't2', abc: '"T2"x', url: '2', name: 'T2' },
-	{ code: 't3', abc: '"T3"x', url: '3', name: 'T3' },
-	{ code: 't4', abc: '"T4"x', url: '4', name: 'T4' },
 	{ code: 'ft', abc: '"FT"x', url: 'T', name: 'FT' },
 	{ code: 'crc', abc: '"CRC"x', url: 'C', name: 'CRC' },
 	{ code: 'rc', abc: '"RC"x', url: 'r', name: 'RC' },
