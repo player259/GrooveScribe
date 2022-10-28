@@ -71,7 +71,7 @@ var constant_ABC_OFF = false;
 var labels = [
 	{ code: 'kick', abc: '"K"x', url: 'K', name: 'K' },
 	{ code: 'snare', abc: '"S"x', url: 'S', name: 'S' },
-	{ code: 'flam', abc: '"flam"x', url: 'f', name: 'flam' },
+	{ code: 'flam', abc: '" flam "x', url: 'f', name: 'flam' },
 	{ code: 'h', abc: '"H"x', url: 'h', name: 'H' },
 	{ code: 'oh', abc: '"OH"x', url: 'H', name: 'OH' },
 	{ code: 'fhh', abc: '"FHH"x', url: 'F', name: 'FHH' },
@@ -2216,8 +2216,23 @@ function GrooveUtils() {
 		}
 
 		root.abc_obj.tosvg("SOURCE", abc_source);
+
+		let output = abcToSVGCallback.abc_svg_output;
+
+		const labelRegex = /(<text class="f1_1.*?>(.*?)<\/text>)/g
+		for (const match of output.matchAll(labelRegex)) {
+			const element = match[1];
+			const name = match[2];
+
+			for (const label of labels) {
+				if (label.name.trim() === name.trim()) {
+					output = output.replace(element, element.replace('f1_1', 'f1_1 label_' + label.code));
+				}
+			}
+		};
+
 		return {
-			svg : abcToSVGCallback.abc_svg_output,
+			svg : output,
 			error_html : abcToSVGCallback.abc_error_output
 		};
 	};

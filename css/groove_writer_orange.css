@@ -563,6 +563,7 @@
 		position: absolute; top: 0px; left: 6px;
 		font-size: 24px;
 		color: #CCCCCC;
+		color: transparent;
 		cursor: pointer;
 	}
 	.sticking_both {
@@ -745,6 +746,7 @@
 		position: absolute; top: -2px; left: -2px;
 		font-size: 25px;
 		color: transparent;
+		fill: transparent;
 		cursor: pointer;
 	}
 	.kick_circle {
@@ -867,6 +869,16 @@
 	.svgTarget.chromaKey {
 		background: rgb(0, 177, 64) !important;
 		color: white;
+	}
+
+	.svgTarget svg text.label_flam {
+		outline: 1px solid black;
+		font-size: 0.5rem;
+	}
+	.svgTarget.chromaKey svg text.label_flam {
+		outline: 1px solid white;
+	}
+	.svgTarget svg text.label_h_k, .svgTarget svg text.label_h_s, .svgTarget svg text.label_oh_k, .svgTarget svg text.label_oh_s, .svgTarget svg text.label_fhh {
 	}
 
 	/* override the normal 100% width that is in groove_display for editing */
