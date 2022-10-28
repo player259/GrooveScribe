@@ -51,7 +51,13 @@ var constant_ABC_HH_Open = "!open!^g";
 var constant_ABC_HH_Close = "!plus!^g";
 var constant_ABC_HH_Accent = "!accent!^g";
 var constant_ABC_HH_Normal = "^g";
-var constant_ABC_SN_Ghost = "!(.!!).!c";
+
+var constant_ABC_SN_Ghost_Open_Char = "\uFE59"; // SMALL LEFT PARENTHESIS (U+FE59, Ps): ﹙
+var constant_ABC_SN_Ghost_Close_Char = "\uFE5A"; // SMALL RIGHT PARENTHESIS (U+FE5A, Pe): ﹚
+var constant_ABC_SN_Ghost_Open_Abc = "\"<" + constant_ABC_SN_Ghost_Open_Char + "\""; // Prepend to note ABC syntax - <(
+var constant_ABC_SN_Ghost_Close_Abc = "\">" + constant_ABC_SN_Ghost_Close_Char + "\""; // Append to note ABC syntax - >)
+var constant_ABC_SN_Ghost = constant_ABC_SN_Ghost_Open_Abc + constant_ABC_SN_Ghost_Close_Abc + "c";
+
 var constant_ABC_SN_Accent = "!accent!c";
 var constant_ABC_SN_Normal = "c";
 var constant_ABC_SN_XStick = "^c";
@@ -1232,8 +1238,7 @@ function GrooveUtils() {
 		'%%annotationfont Lato 16\n' +
 		'%%infofont MADE Waffle Soft 16\n' +
 		'%%textfont Lato 16\n' +
-		'%%deco (. 0 a 5 1 1 "@-8,-3("\n' +
-		'%%deco ). 0 a 5 1 1 "@4,-3)"\n' +
+		// '%%score (Stickings Hands Feet)\n' +
 		'%%beginsvg\n' +
 		' <defs>\n' +
 		' <path id="Xhead" d="m-3,-3 l6,6 m0,-6 l-6,6" class="stroke" style="stroke-width:1.2"/>\n' +
@@ -1382,6 +1387,10 @@ function GrooveUtils() {
 			ABC_String += moveAccentsOrOtherModifiersOutsideOfGroup(abcNoteStrings, "{/c}");
 			// this is the drag notation, it can't be in a sub grouping
 			ABC_String += moveAccentsOrOtherModifiersOutsideOfGroup(abcNoteStrings, "{/cc}");
+
+			// Ghost note annotation
+			ABC_String += moveAccentsOrOtherModifiersOutsideOfGroup(abcNoteStrings, constant_ABC_SN_Ghost_Open_Abc);
+			ABC_String += moveAccentsOrOtherModifiersOutsideOfGroup(abcNoteStrings, constant_ABC_SN_Ghost_Close_Abc);
 
 			ABC_String += "[" + abcNoteStrings.notes1 + abcNoteStrings.notes2 + abcNoteStrings.notes3 + "]"; // [^gc]
 		} else {
@@ -2228,6 +2237,22 @@ function GrooveUtils() {
 				if (label.name.trim() === name.trim()) {
 					output = output.replace(element, element.replace('f1_1', 'f1_1 label_' + label.code));
 				}
+			}
+		};
+
+		// Ghost note styling
+		const parenthesisRegex = /(<text class="f0_1.*?>(.*?)<\/text>)/g
+		for (const match of output.matchAll(parenthesisRegex)) {
+			const element = match[1];
+			const text = match[2];
+
+			if (text === constant_ABC_SN_Ghost_Open_Char) {
+				// Notice: hardcoded y position
+				output = output.replace(element, element.replace('f0_1', 'f0_1 ghost_open').replace(/y="[\d\.]+?"/, 'y="11.8"'));
+			}
+			if (text === constant_ABC_SN_Ghost_Close_Char) {
+				// Notice: hardcoded y position
+				output = output.replace(element, element.replace('f0_1', 'f0_1 ghost_close').replace(/y="[\d\.]+?"/, 'y="11.8"'));
 			}
 		};
 

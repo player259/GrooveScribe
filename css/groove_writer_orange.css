@@ -881,6 +881,21 @@
 	.svgTarget svg text.label_h_k, .svgTarget svg text.label_h_s, .svgTarget svg text.label_oh_k, .svgTarget svg text.label_oh_s, .svgTarget svg text.label_fhh {
 	}
 
+	.svgTarget svg text.ghost_open {
+		transform: translate(0.5em,-0.03em);
+		-ms-transform: translate(0.5em,-0.03em); /* IE 9 */
+		-webkit-transform: translate(0.5em,-0.03em); /* Safari and Chrome */
+		-o-transform: translate(0.5em,-0.03em); /* Opera */
+		-moz-transform: translate(0.5em,-0.03em); /* Firefox */
+	}
+	.svgTarget svg text.ghost_close {
+		transform: translate(-0.5em,-0.03em);
+		-ms-transform: translate(-0.5em,-0.03em); /* IE 9 */
+		-webkit-transform: translate(-0.5em,-0.03em); /* Safari and Chrome */
+		-o-transform: translate(-0.5em,-0.03em); /* Opera */
+		-moz-transform: translate(-0.5em,-0.03em); /* Firefox */
+	}
+
 	/* override the normal 100% width that is in groove_display for editing */
 	#RightHandContent .svgTarget svg {
 		margin-left: 5%;
