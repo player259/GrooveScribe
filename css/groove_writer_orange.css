@@ -590,7 +590,7 @@
 		color: transparent;
 		cursor: pointer;
 	}
-	.sticking_flam, .sticking_fhh, .sticking_crc, .sticking_h_k, .sticking_h_s, .sticking_oh_k, .sticking_oh_s {
+	.sticking_flam, .sticking_fhh, .sticking_crc, .sticking_h_k, .sticking_h_s, .sticking_oh_k, .sticking_oh_s, .sticking_up, .sticking_down, .sticking_tap, .sticking_full {
 		position: absolute; top: 10px; left: -5px;
 		font-size: 14px;
 		color: transparent;
@@ -878,7 +878,7 @@
 	.svgTarget.chromaKey svg text.label_flam {
 		outline: 1px solid white;
 	}
-	.svgTarget svg text.label_h_k, .svgTarget svg text.label_h_s, .svgTarget svg text.label_oh_k, .svgTarget svg text.label_oh_s, .svgTarget svg text.label_fhh {
+	.svgTarget svg text.label_h_k, .svgTarget svg text.label_h_s, .svgTarget svg text.label_oh_k, .svgTarget svg text.label_oh_s, .svgTarget svg text.label_fhh, .svgTarget svg text.label_up, .svgTarget svg text.label_down, .svgTarget svg text.label_tap, .svgTarget svg text.label_full {
 	}
 
 	.svgTarget svg text.ghost_open {

@@ -74,6 +74,7 @@ var constant_ABC_T4_Normal = "A";
 var constant_NUMBER_OF_TOMS = 4;
 var constant_ABC_OFF = false;
 
+// Reserved: R, L, B, c, -
 var labels = [
 	{ code: 'kick', abc: '"K"x', url: 'K', name: 'K' },
 	{ code: 'snare', abc: '"S"x', url: 'S', name: 'S' },
@@ -83,6 +84,10 @@ var labels = [
 	{ code: 'fhh', abc: '"FHH"x', url: 'F', name: 'FHH' },
 	{ code: 'circle', abc: '"○"x', url: 'o', name: '○' },
 	{ code: 'plus', abc: '"+"x', url: '+', name: '+' },
+	{ code: 'up', abc: '"UP"x', url: 'u', name: 'UP' },
+	{ code: 'down', abc: '"DOWN"x', url: 'd', name: 'DOWN' },
+	{ code: 'tap', abc: '"TAP"x', url: 't', name: 'TAP' },
+	{ code: 'full', abc: '"FULL"x', url: 'l', name: 'FULL' },
 	{ code: 't1', abc: '"T1"x', url: '1', name: 'T1' },
 	{ code: 't2', abc: '"T2"x', url: '2', name: 'T2' },
 	{ code: 'ft', abc: '"FT"x', url: 'T', name: 'FT' },
@@ -91,7 +96,7 @@ var labels = [
 	{ code: 'h_k', abc: '"H/K"x', url: 'q', name: 'H/K' },
 	{ code: 'h_s', abc: '"H/S"x', url: 'w', name: 'H/S' },
 	{ code: 'oh_k', abc: '"OH/K"x', url: 'y', name: 'OH/K' },
-	{ code: 'oh_s', abc: '"OH/S"x', url: 'u', name: 'OH/S' },
+	{ code: 'oh_s', abc: '"OH/S"x', url: 'i', name: 'OH/S' },
 ];
 
 var constant_OUR_MIDI_VELOCITY_NORMAL = 85;
