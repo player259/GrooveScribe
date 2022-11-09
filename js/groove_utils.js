@@ -2287,13 +2287,9 @@ function GrooveUtils() {
 				//note.className = note.className.replace(new RegExp(' highlighted', 'g'), "");
 				var class_name = myElements[i].getAttribute("class");
 				myElements[i].setAttribute("class", class_name.replace(new RegExp(' highlighted', 'g'), ""));
-				if(root.debugMode && i === 0) {
-					if(!root.isElementOnScreen(myElements[i])) {
-						if(root.abcNoteNumCurrentlyHighlighted === 0)
-							myElements[i].scrollIntoView({block: "start", behavior: "smooth"});   // autoscroll if necessary
-						else
-							myElements[i].scrollIntoView({block: "end", behavior: "smooth"});   // autoscroll if necessary
-					}
+
+				if(!root.isElementOnScreen(myElements[i])) {
+					myElements[i].scrollIntoView({block: "center", behavior: "auto"});
 				}
 			}
 			root.abcNoteNumCurrentlyHighlighted = -1;
